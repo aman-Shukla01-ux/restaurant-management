@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- <script src="/javascript/script.js"></script> -->
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <title>Restaurant Dashboard</title>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <div class="navbaar">
+    <button id="manu_bar" onclick="manubar()">
+      <i class="fa-solid fa-bars"id="manu_bar_icon"></i>
+    </button>
+    <button id="Add_table_1"onclick="('.popup-overlay','show')">Add Table</button>
+  </div>
+  <!-- ===== SIDEBAR ===== -->
+   
+  <!-- ===== DASHBOARD CARDS ===== -->
+
+<div class="dashboard_cards">
+  <div class="group1">
+    <ul id="list">
+      <li>
+        <button id="logoutBtn">Logout</button>
+      </li>
+    <li>
+      <button onclick="window.location.href='menu.html'"id="menu">Menu</button>
+    </li>
+
+    <li>
+      <button id="Tables">Tables</button>
+    </li>
+
+    <li>
+      <button id="Staff" onclick="window.location.href='staff.html'">Staff</button>
+    </li>
+
+    <li>
+      <button id="order___" onclick="window.location.href='orders.html'">order</button>
+    </li>
+
+    <li>
+      <button id="Order_history">Order_history</button>
+    </li>
+  </ul>
+  </div>
+  
+  <div class="card">
+    <div class="icon table_icon">
+      <i class="fa-solid fa-chair"></i>
+    </div>
+
+    <div class="card_content">
+      <h2 id="total_tables"></h2>
+      <p>Total Tables</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="icon order_icon">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+
+    <div class="card_content">
+      <h2 id="active_orders">15</h2>
+      <p>Active Orders</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="icon sale_icon">
+      <i class="fa-solid fa-indian-rupee-sign"></i>
+    </div>
+
+    <div class="card_content">
+      <h2 id="today_sales">₹5430</h2>
+      <p>Today's Sales</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="icon staff_icon">
+      <i class="fa-solid fa-users"></i>
+    </div>
+
+    <div class="card_content">
+      <h2 id="staff_count"></h2>
+      <p>Staff On Duty</p>
+    </div>
+  </div>
+
+</div>
+<div class="welcome_banner">
+
+    <div class="banner_content">
+        <h1>Welcome Back, Admin!</h1>
+
+        <p>
+            Manage your restaurant operations
+            efficiently from one place.
+        </p>
+
+        <button id="view_report">
+            View Reports
+        </button>
+    </div>
+
+</div>
+<div class="bottom_section">
+
+    <!-- Recent Orders -->
+    <div class="bottom_card">
+  <h2>Recent Orders</h2>
+
+  <table class="recent_orders">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Table</th>
+      </tr>
+    </thead>
+
+    <tbody id="ordersTable">
+      <tr>
+        <td colspan="2">Loading...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+    <!-- Sales Overview -->
+    <div class="bottom_card">
+        <h2>Today's Sales</h2>
+
+        <div class="sales_box">
+            <h1 id="sales_progress">₹ 5,430</h1>
+            <p>Total Revenue Today</p>
+
+            <div class="progress">
+                <div class="progress_fill"></div>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <!-- Top Dishes -->
+    <div class="bottom_card">
+        <h2>Top Dishes</h2>
+
+        <ul class="dish_list">
+            <li>🍕 Margherita Pizza <span>24</span></li>
+            <li>🍔 Chicken Burger <span>20</span></li>
+            <li>🍝 Pasta Alfredo <span>18</span></li>
+            <li>🥪 Veg Sandwich <span>15</span></li>
+            <li>☕ Cold Coffee <span>12</span></li>
+        </ul>
+    </div>
+
+</div>
+  <!-- ===== TABLE / CATEGORY VIEW ===== -->
+  <div class="overlay">
+
+  <div class="table-box">
+       <label for="togglePage" class="close-btn" onclick="Cancel('.overlay')">×</label>
+    <h2>Manage Tables</h2>
+    <p>All database records</p>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Table ID</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody id="output"></tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+<div class="order_">
+  <div class="table-box">
+       <label for="togglePage" class="close-btn" onclick="Cancel('.order_')">×</label>
+    <h2>order History</h2>
+    <p>All database records</p>
+    <label>Search here:</label>
+    <input id="search"type="text"placeholder="Search from this table">
+    <button id ="click"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <table>
+
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Table ID</th>
+          <th>Order Time</th>
+          <th>Item Category</th>
+          <th>Item Name</th>
+          <th>Quantity</th>
+          <th>Total price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody id="Orders"></tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+
+  <!-- ===== ADD TABLE POPUP ===== -->
+ <div class="popup-overlay">
+  <div class="popup">
+
+    <span class="close" onclick="Cancel('.popup-overlay')">&times;</span>
+
+    <h2>Add Table</h2>
+
+    <label>Table ID</label>
+    <input type="number" id="table_id" placeholder="Enter Table ID">
+
+    <label>Table Availability</label>
+    <select id="table_Availbility">
+      <option value="">Select Status</option>
+      <option value="AV">AV</option>
+      <option value="NA">NA</option>
+    </select>
+
+    <button class="save-btn" id="submit__">Save Table</button>
+
+  </div>
+</div>
+
+  <!-- ===== DELETE TABLE CONFIRM ===== -->
+  <div class="table_btn_delete_">
+    <label for="togglePage" class="close-btn"onclick="Cancel('.table_btn_delete_')">×</label>
+    <p>Delete this table?</p>
+    <button id="yes_">Yes</button>
+  </div>
+
+  <!-- ===== DELETE CATEGORY POPUP ===== -->
+  <div class="Delete_popup">
+    <div class="delete-box">
+      <span class="close" onclick="Cancel('.Delete_popup')">&times;</span>
+      <p id="message">Delete this category?</p>
+      <p id="Delete_show"></p>
+      <button id="Delete"onclick="Cancel('.Delete_popup')">Yes</button>
+    </div>
+  </div>
+
+  <!-- ===== SUCCESS MESSAGE ===== -->
+  <div class="insert_item_successfully_popup">
+    <p id="p12">Inserted Successfully ✅</p>
+    <label for="togglePage" class="close-btn"onclick="Cancel('.insert_item_successfully_popup')">×</label>
+  </div>
+
+  <script src="../javascript/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+   <!-- Popup for sign_up-->
+<div class="insert_item_successfully_popup">
+    <span class="close" onclick="Cancel('.insert_item_successfully_popup')">&times;</span>
+    <p id="p12">Signup  Succefully.....</p>
+  </div>
+
+  <div class="page-colour">
+    <p id="copyright">Copyright © 2026 <b>Aman Shukla</b>. All Rights Reserved.</p>  
+  </div>
+  <div class="box">
+    <div class="box1">
+      <button onclick="location.reload()">⟳</button>
+      <p id="heading">User Sign up</p>
+      <br>
+      <input type="text" placeholder="Enter Email id" id="email">
+      <p id="alert"></p>
+ <br>
+  <br>
+      <button onclick="sendOTP()"id="sendOTPbtn">Send OTP</button>
+    
+      <input type="text" placeholder="Enter OTP"id="enterOTP">
+      <p id="result"></p>
+<br>
+<div id="Loader1"></div>
+      <button onclick="verifyOTP()"id="verifyOTPbtn">Verify OTP</button>
+      <input type="password"placeholder="Enter password"id="password">
+     <ul id="password-alert">
+      <li id="error1" style="color: red;">Minimum 8 to Maximum 15 characters allowed.</li>
+      <li id="error2" style="color: red;">Password must contain at least one small and one capital alphabet.</li>
+      <li id="error3" style="color: red;">Password should contain at least one numeric value.</li>
+      <li id="error4" style="color: red;">At least one Numeric digit and one special character (@#$%^&* etc.)</li>
+      <br>
+      <li>Note: The password must not be the same as any of your last three passwords.</li>
+     </ul>
+      <input type="password"placeholder="Enter confirm password"id="confirm-password">
+        <ul>
+          <li id="password-matching"></li>
+        </ul>
+    
+      <button id="create-password">create</button>
+      <br>
+      
+      <p id="sign-up">If have an Account <a href="login.html">Login ?</a></p>
+      
+    </div>
+
+     <div class="box2">
+<p id="welcome">Hello, Welcome!</p>
+<br>
+<a href="#"id="trails">Start 7 days Free trails</a>
+    </div>
+
+  </div>
+  <script src="../javascript/Sign-up.js"></script>
+</body>
+
+</html>

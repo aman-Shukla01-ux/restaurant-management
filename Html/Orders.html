@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Navbaar -->
+<div class="navbaar">
+     <button id="order"onclick="addMoreItem('order')">Orders</button>
+     <a href="index1.html" id="Dashboard">Dashboard</a> 
+      <i class="fa-solid fa-bars"></i>
+     <button id="Add_order">Add Orders</button>
+      <br>
+
+      <br>
+  
+</div>
+      
+  <!-- <div id="output"></div>  -->
+ <!-- show data accourding to category -->
+ <div class="popup-overlay">
+  <div class="popup">
+    <div class="insert_item_successfully_popup">
+    <span class="close"onclick="Cancel('.insert_item_successfully_popup')">&times;</span>
+    <p id="p12">order placed Succefully</p>
+  </div>
+    <span class="close" onclick="Cancel('.popup-overlay')">&times;</span>
+    <h2>Add Orders</h2>
+
+    <label>Table</label>
+    <select id="Order">
+      <option value="">Select table</option>
+    </select>
+
+    <!-- Multiple Items Container -->
+    <div class="items-container">
+
+      <div class="item-row">
+
+        <!-- CATEGORY -->
+        <select class="category_id">
+          <option value="">Select category</option>
+        </select>
+
+        <!-- ITEM -->
+        <select class="item_id">
+          <option value="">Select item</option>
+        </select>
+
+        <!-- PRICE -->
+        <input type="text" class="price" placeholder="Price" readonly />
+        <input type="text" class="total" placeholder="Total price" readonly />
+        <!-- QUANTITY -->
+        <input type="number" class="quantity" placeholder="Qty" />
+
+      </div>
+
+    </div>
+
+    <!-- Add More Button -->
+    <button onclick="addMoreItem()">+ Add More Item</button>
+
+    <div id="savedBox"></div>
+
+    <button class="save-btn" id="place_order"onclick ="addMoreItem('place_order')">place_order</button>
+
+  </div>
+</div>
+
+
+<div class="overlay">
+    <div class="page-container">
+      <div class="page-header">
+        <div>
+          <h1>Manage order</h1>
+          <p class="subtitle">All database records</p>
+        </div>
+      </div>
+      <label for="togglePage" class="close-btn"onclick="Cancel('.overlay')">&times;</label>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>table_id</th>
+              <th>order_id</th>
+              <th>item</th>
+              <th>quantity</th>
+              <th>price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="output">
+            
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div> 
+  <!-- <div class="Delete-icon">
+  </div> -->
+  <div class="insert_item_successfully_popup">
+    <span class="close" onclick="Cancel('.insert_item_successfully_popup')">&times;</span>
+    <p id="p12">item inserted Succefully</p>
+  </div>
+  <div class="Delete_popup">
+    <span class="close" onclick="Cancel('.Delete_popup')">&times;</span>
+  <div id="Delete_show">Are you sure want to delete this item</div>
+  <div id="button_group">
+    <button id="yes">Yes</button>
+    <button id="no"onclick="Cancel('.Delete_popup')">Cancel</button>
+  </div>
+</div>
+
+<script src="../javascript/order.js"></script>
+</body>
+
+</html>

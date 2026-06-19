@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Edit_Category</title>
+</head>
+<body>
+    <div class="navbaar">
+     <button id="Edit_Category">Edit_Category</button>
+     <a href="index1.html" id="Dashboard">Dashboard</a> 
+     <i class="fa-solid fa-bars"></i>
+     <button id="Add_Category">+Add Category</button>
+    </div>
+    
+
+    <div class="overlay">
+    <div class="page-container">
+      <div class="page-header">
+        <div>
+          <h1>Manage Category</h1>
+          <p class="subtitle">All database records</p>
+        </div>
+      </div>
+      <label for="togglePage" class="close-btn"onclick="Cancel('.overlay')">&times;</label>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Category_Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="output">
+            
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div> 
+
+
+     <div class="Delete_popup">
+    <span class="close" onclick="Cancel('.Delete_popup')">&times;</span>
+  <div id="Delete_show">Are you sure want to delete this item</div>
+  <div id="button_group">
+    <button id="Delete">Yes</button>
+    <button id="no"onclick="Cancel('.Delete_popup')">Cancel</button>
+  </div>
+</div> 
+
+<div class="popup-overlay">
+  <div class="popup"> 
+
+    <span class="close" onclick="Cancel('.popup-overlay')">&times;</span>
+
+    <h2>Add Category</h2>
+
+    <label>Category</label>
+    <input type="text" id="Insert_Item" placeholder="Enter Category name">
+    <button class="save-btn" id="Submit">Save Category</button>
+  </div>
+</div>
+<div class="insert_item_successfully_popup">
+    <span class="close" onclick="Cancel('.insert_item_successfully_popup')">&times;</span>
+    <p id="p12">Category inserted Succefully</p>
+  </div>
+
+     <script src="../javascript/Edit_Category.js"></script>
+</body>
+</html>

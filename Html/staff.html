@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Staff</title>
+</head>
+<body>
+   <div class="navbaar">
+     <button id="Role">Role</button>
+     <a href="index1.html" id="Dashboard">Dashboard</a> 
+     <button id="Add_Staff">+Add Staff</button>
+      <br>
+      <br>
+      </div>
+
+      <ul id="list1">
+          <table>
+            <tbody id="categoryList">
+            </tbody>
+          </table>
+    <!-- <li><button id="StarterMenu">Starter</button></li>
+    <li><button id="paneer">Paneer</button></li>
+    <li><button id="Roti">Roti</button></li>
+    <li><button id="Soups">Soups</button></li>
+    <li><button id="Sween">Sween</button></li>
+    <li><button id="Rice">Rice</button></li> -->
+
+      </ul>
+  
+
+<div class="popup-overlay">
+  <div class="popup"> 
+
+    <span class="close" onclick="Cancel('.popup-overlay')">&times;</span>
+
+    <h2>Add Employee</h2>
+
+    <label>Role</label>
+    <select id="category_id">
+      <option value=""id="option">Select Role</option>
+    </select>
+    <label>Employee_Name</label>
+    <input type="text" id="Enter_Employee" placeholder="Enter Employee_Name">
+
+    <label>Salery</label>
+    <input type="number" id="Enter_Salary" placeholder="Enter Salery">
+
+    <label>Shift</label>
+    <input type="text" id="Enter_Shift" placeholder="Enter Shift">
+    <button class="save-btn" id="submit">Save</button>
+  </div>
+</div>
+<div class="insert_item_successfully_popup">
+    <span class="close" onclick="Cancel('.insert_item_successfully_popup')">&times;</span>
+    <p id="p12">Employee added Succefully</p>
+  </div>
+
+
+  <div class="overlay">
+
+  <div class="table-box">
+       <label for="togglePage" class="close-btn" onclick="Cancel('.overlay')">×</label>
+    <h2>Manage Staff</h2>
+    <p>All database records</p>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Employee_Id</th>
+          <th>Employee_Name</th>
+          <th>Salary</th>
+          <th>Shift</th>
+          <th>Attendence</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody id="output"></tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+
+
+
+
+  <script src="../javascript/Staff.js"></script>
+</body>
+</html>

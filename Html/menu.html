@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+  <title>menu</title>
+</head>
+<body>
+  <!-- Navbaar -->
+<div class="navbaar">
+    <button id="Category_name">Category_name</button>
+     <a href="index1.html" id="Dashboard">Dashboard</a> 
+    <i class="fa-solid fa-bars" onclick="manubar()"></i>
+
+    <button id="Add_item" onclick="Add_item()">+Add Item</button>
+</div>
+
+<ul id="list">
+    <table>
+        <tbody id="categoryList"></tbody>
+    </table>
+
+    <button id="Edit_Category_btn">+Edit Category</button>
+</ul>
+  
+</div>
+      
+  <!-- <div id="output"></div>  -->
+ <!-- show data accourding to category -->
+ <div class="popup-overlay" style="display:none">
+  <div class="popup"> 
+
+    <span class="close" onclick="Cancel('.popup-overlay')">&times;</span>
+
+    <h2>Add Item</h2>
+
+    <label>Category</label>
+    <select id="category_id">
+      <option value=""id="option">Select category</option>
+    </select>
+    <label>Item</label>
+    <input type="text" id="Insert_Item" placeholder="Enter item name">
+
+    <label>Price</label>
+    <input type="number" id="Enter_Price" placeholder="Enter price">
+    <button class="save-btn" id="submit">Save Item</button>
+  </div>
+</div>
+
+<div class="overlay">
+    <div class="page-container">
+      <div class="page-header">
+        <div>
+          <h1>Manage Items</h1>
+          <p class="subtitle">All database records</p>
+        </div>
+      </div>
+      <label for="togglePage" class="close-btn"onclick="close_btn()">&times;</label>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="output">
+            
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div> 
+  <!-- <div class="Delete-icon">
+  </div> -->
+  <div class="insert_item_successfully_popup">
+    <span class="close" onclick="Cancel('.insert_item_successfully_popup')">&times;</span>
+    <p id="p12">item inserted Succefully</p>
+  </div>
+  <div class="Delete_popup">
+    <span class="close" onclick="Cancel('.Delete_popup')">&times;</span>
+  <div id="Delete_show">Are you sure want to delete this item</div>
+  <div id="button_group">
+    <button id="yes">Yes</button>
+    <button id="no"onclick="Cancel('.Delete_popup')">Cancel</button>
+  </div>
+</div>
+
+<script src="../javascript/menu.js"></script>
+</body>
+
+</html>

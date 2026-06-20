@@ -52,4 +52,4 @@ This project was developed to gain practical experience in desktop application d
 Restaurant Management Desktop Application built with Electron.js, JavaScript, HTML, CSS, and Supabase for managing tables, orders, and sales.
 
   Download Application:
-[https://drive.usercontent.google.com/download?id=1HdlG2lwMzk6B2npUl2QdO2wF9gVGkkCt&export=download&authuser=0]
+[https://drive.google.com/file/d/1HdlG2lwMzk6B2npUl2QdO2wF9gVGkkCt/view?usp=sharing]
